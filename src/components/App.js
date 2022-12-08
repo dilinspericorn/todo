@@ -12,14 +12,15 @@ export class App extends Component {
   };
 
   onBtnClickId = (id) => {
+    // console.log(id);
     this.setState({
       onBtnClick: id,
     });
   };
 
-  getchecked = (value,selected) => {
+  getchecked = (value, selected) => {
     this.setState({
-      checked: [...this.state.checked, { value: value ,selected:selected }],
+      checked: [...this.state.checked, { value: value, selected: selected }],
     });
   };
 

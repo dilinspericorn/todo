@@ -4,9 +4,27 @@ export class FilterContent extends Component {
   render() {
     return (
       <div>
-        <button className="m-1" onClick={()=>this.props.onBtnClickId(1)}>All</button>
-        <button className="m-1" onClick={()=>this.props.onBtnClickId(2)}>Active</button>
-        <button className="m-1" onClick={()=>this.props.onBtnClickId(3)}>Completed</button>
+        <button
+          className="m-1"
+          id={1}
+          onClick={(e) => this.props.onBtnClickId(e.target.id)}
+        >
+          All
+        </button>
+        <button
+          className="m-1"
+          id={2}
+          onClick={(e) => this.props.onBtnClickId(e.target.id)}
+        >
+          Active
+        </button>
+        <button
+          className="m-1"
+          id={3}
+          onClick={(e) => this.props.onBtnClickId(e.target.id)}
+        >
+          Completed
+        </button>
       </div>
     );
   }

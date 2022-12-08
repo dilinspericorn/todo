@@ -15,7 +15,7 @@ export class FormSubmit extends Component {
     this.setState({
       input: '',
     });
-    this.props.getBtnAdd(false)
+    this.props.getBtnAdd(false);
   };
   render() {
     return (

@@ -9,7 +9,7 @@ export class Footer extends Component {
         <button className="btn btn-primary btn-sm m-3" onClick={this.btnAdd}>
           Add
         </button>
-        <FilterContent onBtnClickId={this.props.onBtnClickId}/>
+        <FilterContent onBtnClickId={this.props.onBtnClickId} />
       </div>
     );
   }
