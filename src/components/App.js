@@ -8,21 +8,29 @@ export class App extends Component {
     input: [],
     btnAdd: false,
     checked: [],
+
     onBtnClick: null,
   };
 
   onBtnClickId = (id) => {
-    // console.log(id);
     this.setState({
       onBtnClick: id,
     });
   };
 
   getchecked = (value, selected) => {
-    this.setState({
-      checked: [...this.state.checked, { value: value, selected: selected }],
-    });
+    this.state.checked.filter((todo) => todo.name === value).length > 0
+      ? this.setState({
+          ...this.state,
+          checked: this.state.checked.filter((todo) => todo.name !== value),
+        })
+      : this.setState({
+          ...this.state,
+          checked: [...this.state.checked, { name: value, selected: selected }],
+        });
   };
+
+  // [...this.state.checked, { value: value, selected: selected }];
 
   getBtnAdd = (e) => {
     this.setState({
@@ -37,6 +45,7 @@ export class App extends Component {
   };
 
   render() {
+    // console.log(this.state.checked);
     return (
       <div className="container main-card">
         <Header />

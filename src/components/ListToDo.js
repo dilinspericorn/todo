@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { onlyUnique } from './Utils';
+// import { onlyUnique } from './Utils';
 
 export class ListToDo extends Component {
   getChecked = (data, e) => {
@@ -8,14 +8,16 @@ export class ListToDo extends Component {
 
   render() {
     let Items = this.props.input;
-    let checkeditems = this.props.checked
-      .map((data) => data.value)
-      .filter(onlyUnique);
+    console.log(this.props.checked);
+
+    let checkeditems = this.props.checked.map((data) => data.name);
+  
     if (+this.props.onBtnClick === 1) {
       Items = this.props.input;
     }
     if (+this.props.onBtnClick === 2) {
       Items = this.props.input.filter((data) => !checkeditems.includes(data));
+      console.log(Items);
     }
     if (+this.props.onBtnClick === 3) {
       Items = this.props.input.filter((data) => checkeditems.includes(data));
